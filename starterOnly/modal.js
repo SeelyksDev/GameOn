@@ -36,6 +36,14 @@ function validate() {
     clearError(firstName);
   }
 
+  const lastName = form["last"];
+  if (lastName.value.trim().length < 2) {
+    displayError(lastName, "Le nom doit contenir au moins 2 caractères.");
+    isValid = false;
+  } else {
+    clearError(lastName);
+  }
+
   return isValid
 }
 
