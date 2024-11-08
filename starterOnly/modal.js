@@ -53,6 +53,15 @@ function validate() {
     clearError(email);
   }
 
+  const quantity = form["quantity"];
+  if (quantity.value === '' || isNaN(quantity.value) || quantity.value < 0) {
+    displayError(quantity, "Veuillez entrer un nombre valide pour les participations.");
+    isValid = false;
+  } else {
+    clearError(quantity);
+  }
+
+
   return isValid
 }
 
