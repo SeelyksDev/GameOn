@@ -1,3 +1,41 @@
+
+// DOM Elements
+const modalbg = document.querySelector(".bground");
+const modalBtn = document.querySelectorAll(".modal-btn");
+const closeModalBtn = document.querySelector('.close')
+const formData = document.querySelectorAll(".formData");
+const form = document.forms['reserve'];
+
+// launch and close modal event
+modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
+closeModalBtn.addEventListener('click', closeModal);
+
+// Event Validation form
+form.addEventListener("submit", function(e) {
+  if (!validate()) {
+    e.preventDefault();
+  }
+});
+
+// launch and close modal form
+function launchModal() {
+  modalbg.style.display = "block";
+}
+function closeModal() {
+  modalbg.style.display = "none"
+}
+
+function validate() {
+  let isValid = true;
+
+  const firstName = form["first"];
+  if (firstName.value.trim().length < 2) {
+    isValid = false;
+  }
+
+  return isValid
+}
+
 function editNav() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
@@ -5,28 +43,6 @@ function editNav() {
   } else {
     x.className = "topnav";
   }
-}
-
-// DOM Elements
-const modalbg = document.querySelector(".bground");
-const modalBtn = document.querySelectorAll(".modal-btn");
-const closeModalBtn = document.querySelector('.close')
-const formData = document.querySelectorAll(".formData");
-
-// launch modal event
-modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
-
-// close modal event
-closeModalBtn.addEventListener('click', closeModal);
-
-// launch modal form
-function launchModal() {
-  modalbg.style.display = "block";
-}
-
-// Close modal form
-function closeModal() {
-  modalbg.style.display = "none"
 }
 
 
