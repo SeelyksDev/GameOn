@@ -66,7 +66,15 @@ function validate() {
     displayError(form["location1"], "Veuillez sélectionner un tournoi.");
     isValid = false;
   } else {
-    clearError(form["location1"]); // Efface l'erreur sur le premier bouton radio
+    clearError(form["location1"]);
+  }
+
+  const termsAccepted = form["checkbox1"];
+  if (!termsAccepted.checked) {
+    displayError(termsAccepted, "Vous devez accepter les conditions d'utilisation.");
+    isValid = false;
+  } else {
+    clearError(termsAccepted);
   }
 
 
