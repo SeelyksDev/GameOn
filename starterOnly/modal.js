@@ -30,7 +30,10 @@ function validate() {
 
   const firstName = form["first"];
   if (firstName.value.trim().length < 2) {
+    displayError(firstName, "Le prénom doit contenir au moins 2 caractères.");
     isValid = false;
+  } else {
+    clearError(firstName);
   }
 
   return isValid
