@@ -61,6 +61,14 @@ function validate() {
     clearError(quantity);
   }
 
+  const location = form.querySelector('input[name="location"]:checked');
+  if (!location) {
+    displayError(form["location1"], "Veuillez sélectionner un tournoi.");
+    isValid = false;
+  } else {
+    clearError(form["location1"]); // Efface l'erreur sur le premier bouton radio
+  }
+
 
   return isValid
 }
