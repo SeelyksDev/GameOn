@@ -44,6 +44,15 @@ function validate() {
     clearError(lastName);
   }
 
+  const email = form["email"];
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email.value)) {
+    displayError(email, "Veuillez entrer une adresse e-mail valide.");
+    isValid = false;
+  } else {
+    clearError(email);
+  }
+
   return isValid
 }
 
