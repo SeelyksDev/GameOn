@@ -36,6 +36,18 @@ function validate() {
   return isValid
 }
 
+function displayError(element, message) {
+  const parent = element.closest(".formData");
+  parent.setAttribute("data-error", message);
+  parent.setAttribute("data-error-visible", "true");
+}
+
+function clearError(element) {
+  const parent = element.closest(".formData");
+  parent.removeAttribute("data-error");
+  parent.removeAttribute("data-error-visible");
+}
+
 function editNav() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
