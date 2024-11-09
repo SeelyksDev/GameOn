@@ -22,7 +22,8 @@ function launchModal() {
   modalbg.style.display = "block";
 }
 function closeModal() {
-  modalbg.style.display = "none"
+  modalbg.style.display = "none";
+  clearAllErrors();
 }
 
 function validate() {
@@ -53,6 +54,14 @@ function validate() {
     clearError(email);
   }
 
+  const birthdate = form['birthdate'];
+  if (!birthdate.value) {
+    displayError(birthdate, "Veuillez entrer votre date de naissance.");
+    isValid = false;
+  } else {
+    clearError(birthdate);
+  }
+
   const quantity = form["quantity"];
   if (quantity.value === '' || isNaN(quantity.value) || quantity.value < 0) {
     displayError(quantity, "Veuillez entrer un nombre valide pour les participations.");
@@ -78,7 +87,7 @@ function validate() {
   }
 
 
-  return isValid
+  return isValid;
 }
 
 function displayError(element, message) {
@@ -91,6 +100,14 @@ function clearError(element) {
   const parent = element.closest(".formData");
   parent.removeAttribute("data-error");
   parent.removeAttribute("data-error-visible");
+}
+
+function clearAllErrors() {
+  formData.forEach((field) => {
+    field.removeAttribute("data-error");
+    field.removeAttribute("data-error-visible");
+  });
+  form.reset();
 }
 
 function editNav() {
