@@ -29,6 +29,10 @@ closeConfirmationBtn.addEventListener("click", closeConfirmation);
 // launch and close modal form
 function launchModal() {
     modalbg.style.display = "block";
+    modalFormBody.style.display = "block";
+    confirmationModal.style.display = "none";
+    clearAllErrors();
+
 }
 function closeModal() {
     modalbg.style.display = "none";
