@@ -28,10 +28,6 @@ p {
   padding: 0.5vw;
 }
 
-img {
-  padding-right: 1rem;
-}
-
 .topnav {
   overflow: hidden;
   margin: 3.5%;
@@ -74,6 +70,10 @@ img {
 }
 
 @media screen and (max-width: 768px) {
+  .topnav {
+    margin: 20px 30px 15px 30px;
+  }
+
   .topnav a {
     display: none;
   }
@@ -85,6 +85,11 @@ img {
 }
 
 @media screen and (max-width: 768px) {
+
+  .topnav a {
+    margin: 0;
+  }
+
   .topnav.responsive {
     position: relative;
   }
@@ -104,7 +109,23 @@ img {
 
 
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 1024px) {
+  .topnav.responsive {
+    position: relative;
+  }
+
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
   .topnav a {
     display: none;
   }
@@ -112,7 +133,6 @@ img {
   .topnav a.icon {
     float: right;
     display: block;
-    margin-top: -15px;
   }
 }
 
@@ -126,8 +146,6 @@ main {
   margin: 1px 20px 15px;
   border-radius: 2rem;
   text-align: justify;
-
-
 }
 
 .modal-btn {
@@ -455,7 +473,6 @@ input[data-error]::after {
 }
 
 .hero-section {
-  min-height: 93vh;
   border-radius: 10px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -471,7 +488,7 @@ input[data-error]::after {
   color: #fff;
   position: relative;
   text-align: left;
-  min-width: 424px;
+  min-width: 100%;
 }
 
 .hero-content::after {
@@ -520,6 +537,7 @@ input[data-error]::after {
   height: 100%;
   display: block;
   padding: 0;
+  object-fit: cover;
 }
 
 .copyrights {
@@ -540,16 +558,55 @@ footer {
   margin: 0 20px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1024px) {
+  .header-logo {
+    width: 200px;
+    margin-top: 7px;
+  }
+  .header-logo img {
+    width: 100%;
+  }
+  .hero-content {
+    padding:51px 35px;
+  }
+  .hero-headline {
+    font-size: 70px;
+  }
+  .hero-text {
+    font-size: 15px;
+  }
+  .btn-signup {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .header-logo {
+    width: 131px;
+    margin-top: 12px;
+  }
+  
+  .header-logo img {
+    width: 100%;
+  }
+
+  main {
+    margin: 0 30px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   .hero-section {
     display: block;
     box-shadow: unset;
+    margin-bottom: 0;
   }
 
   .hero-content {
     background: #fff;
     color: #000;
-    padding: 20px;
+    padding: 0px;
   }
 
   .hero-content::after {
@@ -561,13 +618,14 @@ footer {
   }
 
   .hero-headline {
-    font-size: 4.5rem;
+    font-size: 37px;
     white-space: normal;
   }
 
   .hero-text {
     width: unset;
-    font-size: 1.5rem;
+    font-size: 12px;
+    margin-top: 19px;
   }
 
   .hero-img img {
@@ -577,13 +635,16 @@ footer {
 
   .hero-section>.btn-signup {
     display: block;
-    margin: 32px auto 10px;
+    margin: 32px auto 35px;
     padding: 12px 35px;
+    font-size: 14px;
   }
 
   .copyrights {
-    margin-top: 50px;
     text-align: center;
+    font-size: 10px;
+    margin-top: 0;
+    margin-bottom: 25px;
   }
 }
 
