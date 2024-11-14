@@ -648,6 +648,19 @@ footer {
     font-size: 14px;
   }
 
+  .bground {
+    top: 80px;
+    height: calc(100% - 50px);
+    background-color: transparent;
+  }
+
+  .content {
+    margin: 0 auto;
+    height: 100%;
+    max-width: 100%;
+    overflow-y: auto;
+  }
+
   .copyrights {
     text-align: center;
     font-size: 10px;
