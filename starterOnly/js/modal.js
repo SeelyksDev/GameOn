@@ -16,10 +16,8 @@ closeModalBtn.addEventListener("click", closeModal);
 
 // Event Validation form
 form.addEventListener("submit", function (e) {
-    if (!validate()) {
-        e.preventDefault();
-    } else {
-        e.preventDefault();
+    e.preventDefault();
+    if (validate()) {
         displayConfirmation();
     }
 });
@@ -32,7 +30,6 @@ function launchModal() {
     modalFormBody.style.display = "block";
     confirmationModal.style.display = "none";
     clearAllErrors();
-
 }
 
 // close modal form
@@ -113,7 +110,6 @@ function validate() {
 
     return isValid;
 }
-
 
 function displayError(element, message) {
     const parent = element.closest(".formData");
