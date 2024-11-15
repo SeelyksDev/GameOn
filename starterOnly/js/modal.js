@@ -26,7 +26,7 @@ form.addEventListener("submit", function (e) {
 
 closeConfirmationBtn.addEventListener("click", closeConfirmation);
 
-// launch and close modal form
+// launch modal form
 function launchModal() {
     modalbg.style.display = "block";
     modalFormBody.style.display = "block";
@@ -34,11 +34,14 @@ function launchModal() {
     clearAllErrors();
 
 }
+
+// close modal form
 function closeModal() {
     modalbg.style.display = "none";
     clearAllErrors();
 }
 
+// function to validate sending conditions
 function validate() {
     let isValid = true;
 
@@ -111,6 +114,7 @@ function validate() {
     return isValid;
 }
 
+
 function displayError(element, message) {
     const parent = element.closest(".formData");
     parent.setAttribute("data-error", message);
@@ -140,6 +144,7 @@ function closeConfirmation() {
     modalbg.style.display = "none";
 }
 
+// manage navbar display
 function editNav() {
     var x = document.getElementById("myTopnav");
     if (x.className === "topnav") {
