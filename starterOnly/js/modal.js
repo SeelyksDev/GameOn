@@ -8,7 +8,7 @@ const formData = document.querySelectorAll(".formData");
 const form = document.forms["reserve"];
 const confirmationModal = document.querySelector(".sendConfirmation");
 const confirmationTitle = document.querySelector(".confirmation-title");
-const closeConfirmationBtn = document.querySelector(".btn-submit");
+const closeConfirmationBtn = document.querySelector(".btn-close");
 
 // launch and close modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
