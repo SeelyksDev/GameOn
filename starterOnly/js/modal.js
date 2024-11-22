@@ -41,12 +41,13 @@ function closeModal() {
 // function to validate sending conditions
 function validate() {
     let isValid = true;
+    const nameRegex = /[^A-Za-z\s]/;
 
     const firstName = form["first"];
-    if (firstName.value.trim().length < 2) {
+    if (firstName.value.trim().length < 2 || nameRegex.test(firstName.value.trim())) {
         displayError(
             firstName,
-            "Le prénom doit contenir au moins 2 caractères."
+            "Le prénom doit contenir au moins 2 lettres et uniquement des lettres."
         );
         isValid = false;
     } else {
@@ -54,8 +55,8 @@ function validate() {
     }
 
     const lastName = form["last"];
-    if (lastName.value.trim().length < 2) {
-        displayError(lastName, "Le nom doit contenir au moins 2 caractères.");
+    if (lastName.value.trim().length < 2 || nameRegex.test(lastName.value.trim())) {
+        displayError(lastName, "Le nom doit contenir au moins 2 caractères et uniquement des lettres.");
         isValid = false;
     } else {
         clearError(lastName);
